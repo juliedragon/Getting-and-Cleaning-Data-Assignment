@@ -1,0 +1,41 @@
+---
+title: "Getting and Cleaning Data Assignment Codebook"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## The Data
+This is an R Markdown codebook for the final assignment of the Getting and Cleaning Data course. Data for this project can be downloaded from the following link:
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+
+The codebook for the data is available from the following:
+http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+
+##Getting and Cleaning Data Assignment Script
+First, we loaded the necessary library for plyr
+```library(plyr)```
+
+Next, we read all of the processed data files for both training subjects and test subjects and combine them into one data table with the appropriate column labels.  
+There are 3 types of files:
+
+1. X: rows of feature measurements
+2. Y: the activity labels, encoded as numbers, corresponding to each row of X. 
+3. Subject: the subjects, encoded as numbers, on which each row of X was measured.
+
+Corresponding to these files are two label files that translate the encoded numbers into features and activities:
+
+1. features.txt
+2. activity_labels.txt
+
+The X, Y, and Subject data files are read and combined for training and test data.
+
+##Extracting Metrics and Tidying Data
+
+First, we **tidy the feature labels**. Next, we **extract the means and standard deviations** of each feature. Then, we **tidy and attached the activity labels**.
+
+##Output file
+Lastly we output the mean of the features from the combined data into a file called *TidyMean.txt*.
+
